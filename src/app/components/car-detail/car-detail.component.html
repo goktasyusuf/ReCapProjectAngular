@@ -1,0 +1,237 @@
+<button routerLink="/cars" class="btn btn-danger"><i class="fa-solid fa-arrow-left"></i> Tüm Araçlara Geri Dön</button>
+<br><br>
+<br>
+<div *ngFor="let c of car">
+  <div class="row"  *ngIf="car.length>0">
+    <div class="col-lg-8">
+      <span class="featured">FEATURED</span>
+      <span class="rent">RENT</span>
+      <br>
+      <br>
+      <i class="fa-solid fa-location-dot icon" style="margin-right: 5px;"></i><span
+        style="color:gray;font-size: 20px;">{{c.location}}</span>
+      <h4>{{c.carName}}</h4>
+      <span style="margin-right: 20px;"><i class="fa-solid fa-eye"></i> Görüntülenme:65</span>
+      <span style="margin-right: 20px;"><i class="fa-solid fa-address-card"></i> ID:{{c.carId}}</span>
+      <span style="margin-right: 20px;"><i class="fa-solid fa-arrows-rotate"></i> Karşılaştır</span>
+      <span style="margin-right: 20px;color: red;"><i class="fa-solid fa-triangle-exclamation"></i> Raporla</span>
+      <span><i class="fa-solid fa-share-from-square"></i> Paylaş</span>
+      <br>
+      <br>
+      <div style="margin-bottom: 30px;" *ngIf="carImages?.length != 0" id="carouselExampleIndicators"
+        class="carousel slide " data-bs-ride="true">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" *ngFor="let carImage of carImages; let i = index"
+            [attr.data-bs-slide-to]="i" [class.active]="i == 0"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item" *ngFor="let carImage of carImages; let i = index" [class.active]="i == 0">
+            <img [src]="getImagePath(carImage)" width="100%" class="d-block fit" alt="car image">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <img class="no_image" *ngIf="carImages?.length == 0" [src]="defaultImage" style="margin-bottom: 30px;" alt="">
+      <h5 style="color:#3cd594;">Araba Açıklaması</h5>
+      <p style="color:gray;text-align: justify;">
+        Consectetur adipisicing elit sedaten do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim
+        veniam, quis dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat nonat proident, sunt in culpa
+        qui officia deserunt mollit anim perspiciatis unde.
+        <br><br>
+        Domnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+        voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quistan miki ratione
+        voluptatem sequi nesciunt. Neque porro quisquam estiam.
+      </p>
+      <div class="d-flex justify-content-center">
+        <ul class="styles">
+          <li>
+            <img src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/features/img-01.png" alt="">
+            <h6>2019</h6>
+            <span>Model Year</span>
+          </li>
+          <li><img src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/features/img-02.png" alt="">
+            <h6>1,73,272 km</h6>
+            <span>Total Drived</span>
+          </li>
+          <li><img src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/features/img-03.png" alt="">
+            <h6>Petrol</h6>
+            <span>Fuel Type</span>
+          </li>
+          <li><img src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/features/img-04.png" alt="">
+            <h6>Automatic</h6>
+            <span>Transmission</span>
+          </li>
+          <li><img class="imgd" src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/features/img-05.png"
+              alt="">
+            <h6 class="mr">2500 CC</h6>
+            <span class="mr">Engine Capacity</span>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div class="features">
+        <h5>Additional Features</h5>
+        <p style="text-align: justify;color: gray;">Quae ab illo inventore veritatis et quasi architecto beataie vitae
+          dicta sunt explicabo. Nemo enimnation ipsam
+          toram voluptatem quia voluptas sit aspernatur adipisicing elitiams sed do eiusmod tempor incididunt ut labore
+          et
+          dolore magna aliqua enim ad minim veniam quis.</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <ul>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Aut odit aut fugit sed quia</span>
+              </li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Neque porro quisquam quia dolor sit
+                  amet</span></li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Lorem ipsum dolor sit amet.</span>
+              </li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Consectetur adipisci velite sed quia
+                  none</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Eiusmod tempor incididunt ut
+                  labore</span></li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> NDolore magna aliqua</span></li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Nostrud exercitation ullamco</span>
+              </li>
+              <li><span><i class="fa-solid fa-check" style="color: #3cd594;"></i> Ut enim ad minim veniam quis</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="all">
+        <div class="title">
+          <h6>Kiralama Bilgileri</h6>
+        </div>
+        <div class="main">
+          <strong class="price">{{c.dailyPrice|vatAdded:10  }} TL</strong>
+          <small class="small">*Fiyatta Pazarlık Yoktur</small>
+          <div class="communication">
+            <a href="">
+              <h6 style=" font-family: 'Shantell Sans', cursive;">Hemen Ara</h6>
+              <i class="fa-solid fa-mobile-screen-button" style="margin-right: 1rem;font-size: 1rem;"></i>
+              <span style="font-size: .9rem;">+90 999 99 99</span>
+            </a>
+          </div>
+          <div class="message">
+            <a href="">
+              <h6 style="font-family: 'Shantell Sans', cursive;">Hemen Mesaj At</h6>
+              <i style="margin-right: 1rem; font-size: 1rem;" class="fa-solid fa-envelope"></i>
+              <span style="font-size: .9rem;">yusufgk125@gmail.com</span>
+            </a>
+          </div>
+          <p style="margin-top: 1rem;font-family: 'Shantell Sans', cursive;color: gray;text-align: center;">Lorem, ipsum
+            dolor sit amet consectetur adipisicing elit. Quae cupiditate nemo nam.</p>
+          <div class="seller">
+            <ul>
+              <li class="profile">
+                <figure>
+                  <img src="http://amentotech.com/htmls/wheelspot/images/vehicle-single/user-img.jpg" alt="">
+                </figure>
+                <div class="seller_title">
+                  <h6>Yusuf Göktaş</h6>
+                  <div class="d-flex">
+                    <ul class="social_media">
+                      <a href="">
+                        <li class="social"><i class="fa-brands fa-facebook"></i>
+                        </li>
+                      </a>
+                      <a href="">
+                        <li class="social"><i class="fa-brands fa-linkedin"></i>
+                        </li>
+                      </a>
+                      <a href="">
+                        <li class="social"><i class="fa-brands fa-twitter"></i>
+                        </li>
+                      </a>
+                      <a href="">
+                        <li class="social"><i class="fa-brands fa-square-google-plus"></i>
+                        </li>
+                      </a>
+                      <a href="">
+                        <li class="social"><i class="fa-brands fa-github"></i>
+                        </li>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Marka
+                  : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.brandName|uppercase}}</span>
+              </li>
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Renk
+                  : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.colorName}}</span>
+              </li>
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Araç
+                  Çıkış Yılı: </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.modelYear}}</span>
+              </li>
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Günlük
+                  Fiyat : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.dailyPrice}} TL</span>
+              </li>
+
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">KDV'li
+                  Fiyat : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.dailyPrice |vatAdded:10}} TL</span>
+              </li>
+              <li>
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Konum
+                  : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.location}}</span>
+              </li>
+              <li class="last">
+                <span
+                  style="color: rgb(197, 81, 81);margin-right: 1rem;font-size: 1.2rem;font-family: 'Shantell Sans'">Açıklama
+                  : </span>
+                <span style="font-size: 1.2rem;font-family: 'Shantell Sans'">{{c.carName}}</span>
+              </li>
+              <li>
+                <button routerLink="payment" class="btn btn-danger" style="margin-left: 5rem;">Kiralamaya Git</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+
+<div class="alert alert-danger" role="alert" *ngIf="car?.length == 0">
+  Bu araç zaten kiralanmış
+  <br>
+  <br>
+  <button routerLink="/" class="btn btn-success">Ana Sayfaya Git</button>
+</div>
+<br><br><br>
+
+

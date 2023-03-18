@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<br><br>
+<div class="container p-0" *ngIf="car">
+  <div class="card px-4" style="height: 40rem;padding: 5rem;">
+    <form [formGroup]="paymentForm">
+    <p class="h8 py-3">Ödeme Detayları</p>
+    <div class="row gx-3">
+      <div class="col-12">
+        <div class="d-flex flex-column">
+          <p class="text mb-1">İsim - Soyİsim</p>
+          <input class="form-control mb-3" type="text" placeholder="Ad Soyad" >
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="d-flex flex-column">
+          <p class="text mb-1">Kart Numarası</p>
+          <input formControlName="creditCardId" class="form-control mb-3" type="number" placeholder="1234 5678 435678">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="d-flex flex-column">
+          <p class="text mb-1">Son Kullanma Tarihi</p>
+          <input formControlName="expirationDate" class="form-control mb-3" type="text" placeholder="MM/YYYY">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="d-flex flex-column">
+          <p class="text mb-1">CVV/CVC</p>
+          <input formControlName="cvv" class="form-control mb-3 pt-2 " type="text" placeholder="***">
+        </div>
+      </div>
+      <div class="col-6" style="display: none;">
+        <div class="d-flex flex-column">
+          <input formControlName="customerId" value="{{setUserId()}}" class="form-control mb-3 pt-2 " type="number">
+        </div>
+      </div>
+      <div class="col-12" style="margin-top: 2rem;">
+        <div class="btn btn-primary mb-3"  (click)="pay()">
+          <span class="ps-3">{{car.dailyPrice}} TL ÖDE</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+<br><br>

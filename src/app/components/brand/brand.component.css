@@ -1,0 +1,9 @@
+ul li {
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    ul {
+        margin-bottom: 10px;
+    }
+  }

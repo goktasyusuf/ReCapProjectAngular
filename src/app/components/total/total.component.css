@@ -1,0 +1,18 @@
+.wo-sectionhead {
+    flex-direction: column;
+    margin-bottom: 33px;
+}
+wo-sectionhead__title {
+    margin-bottom: 22px;
+    position: relative;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.wo-sectionhead__title:before {
+    width: 145px;
+    height: 1px;
+    margin-left: -72.5px;
+    background: #eee;
+    top: 2px;
+}

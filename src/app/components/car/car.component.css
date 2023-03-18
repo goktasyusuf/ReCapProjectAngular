@@ -1,0 +1,179 @@
+.featured {
+  background-color: #fdc500;
+  padding: 0px 5px;
+  border-radius: 10%;
+  text-decoration: none;
+  color: #123652;
+  position: absolute;
+  top: -190px;
+  right: 35px;
+}
+.featured h6 {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.featured_number {
+  background-color: #123652;
+  color: white;
+  padding: 0px 10px;
+  border-radius: 10%;
+  text-decoration: none;
+  position: absolute;
+  top: -190px;
+  left: 5px;
+}
+
+.card_main {
+  position: relative;
+  width: 300px;
+}
+
+.car_image {
+  width: 275px;
+  height: 200px;
+  border-radius: 2%;
+
+}
+.card {
+  width: 275px;
+  padding: 15px;
+}
+
+.information {
+  position: relative;
+  top: 0px;
+}
+
+.like_button{
+  background-color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  top: -40px;
+  right: 30px;
+  border-radius: 20%;
+}
+
+
+.basket {
+  position: absolute;
+  top: -40px;
+  left: 15px;
+  background-color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+  border-radius: 20%;
+}
+.basket i {
+  color: black;
+  font-size: 15px;
+}
+.basket:hover {
+  background-color: #e74c3c;
+  transition: 0.5s;
+}
+
+.like_button i {
+    color: black;
+    font-size: 15px;
+}
+.like_button:hover {
+    background-color: #e74c3c;
+    transition: 0.5s;
+}
+
+
+.like_button:hover i  {
+    color: white;
+}
+
+.blue {
+  color: #55acee;
+}
+
+.green {
+  color: #3cd594;
+}
+
+.iconsize {
+  font-size: 18px;
+}
+
+@media (max-width: 1200px) {
+  .car_image {
+    width: 300px;
+  }
+  .card {
+    width: 300px;
+  }
+  .featured {
+    right: 15px;
+  }
+  .like_button{
+    top: -40px;
+    right: 15px;
+
+  }
+}
+
+@media (max-width: 992px) {
+  .car_image {
+    width: 335px;
+  }
+  .card {
+    width: 335px;
+  }
+  .featured {
+    right: -20px;
+  }
+  .like_button {
+    right: -20px;
+  }
+  .iconsize {
+    font-size: 12px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .card_main {
+    margin-top: 15px;
+  }
+  .y {
+    justify-content: center;
+    align-items: center;
+  }
+  .like_button {
+    right: 15px;
+  }
+  .featured {
+    right: 15px;
+  }
+  .car_image {
+    width: 300px;
+  }
+  .card {
+    width: 300px;
+  }
+  .select {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  }
+  .select select {
+    margin-bottom: 10px;
+  }
+  .select_button{
+    padding: 5px 15px !important;
+  }
+  .select input {
+    width: 250px;
+    margin-left: 0px;
+    margin-right: 25px;
+  }
+}

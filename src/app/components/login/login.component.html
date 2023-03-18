@@ -1,0 +1,49 @@
+<br>
+<section class="vh-100" style="background-color: #fffefe;border-radius: 10px;">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://static.vecteezy.com/system/resources/previews/008/461/390/original/car-rental-logo-on-white-background-luxury-car-illustration-modern-business-concept-car-rental-company-transportation-service-business-vector.jpg" style="border-radius: 10px;" class="img-fluid"
+          alt="Sample image">
+          <br>
+          <br>
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Email Adresiniz *</label>
+              <input type="text" formControlName="email" class="form-control"
+               />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Şifreniz *</label>
+              <input type="password" formControlName="password" class="form-control" />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Beni Hatırla
+              </label>
+            </div>
+            <a href="#!" class="text-body">Şifrenizi mi unuttunuz ?</a>
+          </div>
+          <br>
+          <span style="color: red;">* ile işaretlenen alanlar zorunludur</span>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button (click)="login()" type="button" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Giriş Yap</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Hesabınız Yok Mu ? <a routerLink="/register" class="link-danger">Kayıt Olun</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<br>

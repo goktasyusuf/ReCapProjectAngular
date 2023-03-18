@@ -1,0 +1,64 @@
+.bg_image {
+    background-image: url(https://amerirentacar.myshopbox.lk/stores/amerirentacar/img/car-rentals-1.jpg);
+
+}
+.white {
+    color: white;
+}
+.image_position {
+    background-size: cover; 
+    background-position: center;
+}
+
+.partner {
+    display: block;
+    margin: 15px 0;
+  }
+  .partner__img {
+    max-width: 150%;
+    margin: 0 auto;
+    display: block;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    transition: 0.4s ease;
+  
+    
+  }
+  .partner:hover .partner__img {
+    opacity: 1;
+  }
+  @media (min-width: 992px) {
+    .partner {
+      margin: 20px 0;
+    }
+  }
+
+
+  .carousel-item  {
+    max-height: 29rem;
+  }
+  
+  .item img {
+     
+   
+      object-fit: cover;
+      
+  }
+
+  @media (max-width: 1200px) {
+    .carousel-item  {
+      max-height: 20rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .carousel-item  {
+      max-height: 17rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item  {
+      max-height:12rem;
+    }
+  }

@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<h3 style="font-family: 'Pacifico', cursive;">Kiralayacağınız Arabanın Bilgileri</h3>
+<hr>
+
+<div *ngIf="car == null">
+  <div class="alert alert-danger" role="alert">
+    Kiralamak istediğiniz araba zaten kiralanmış! 
+    <br>
+    <br>
+    <button routerLink="/" class="btn btn-success">Ana Sayfaya Dön.</button>
+  </div>
+</div>
+
+<div class="main" *ngIf="car!= null">
+<div class="row">
+  <div class="col-lg-8">
+    <div class="container-fluid px-1  mx-auto">
+      <div>
+        <div class=" text-center">
+          <div class="card" *ngIf="user">
+            <h4><i class="fa-solid fa-user"></i> Kiralayan Bilgileri </h4>
+            <form class="form-card">
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Ad<span
+                      class="text-danger"> *</span></label> <input type="text" placeholder="{{user.firstName}}" > </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Soyad<span
+                      class="text-danger"> *</span></label> <input placeholder="{{user.lastName}}" type="text" id="lname" name="lname"
+                    onblur="validate(2)"> </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">E-Posta<span
+                      class="text-danger"> *</span></label> <input placeholder="{{user.eMail}}" type="text" id="email" name="email" 
+                    onblur="validate(3)"> </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Telefon
+                    Numarası<span class="text-danger"> *</span></label> <input placeholder="{{user.phoneNumber}}" type="text" id="mob" name="mob" 
+                    onblur="validate(4)"> </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Posta
+                    Kodu<span class="text-danger"> </span></label> <input type="text" id="job" name="job"
+                    placeholder="" onblur="validate(5)"> </div>
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">TC No<span
+                      class="text-danger"> *</span></label> <input type="text" id="job" name="job"  placeholder="{{user.nationalityId}}"
+                    onblur="validate(5)"> </div>
+              </div>
+              <div class="row text-left">
+                <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Eklemek
+                    İstedikleriniz<span class="text-danger"></span></label> <textarea rows="4"></textarea></div>
+                <div class="form-group col-sm-6" style="margin-top: auto;margin-bottom: auto;">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div>
+                        <p class="mb-2"><i class="fa-solid fa-hourglass-end" style="margin-right: 5px;"></i><span>Teslim
+                            Alış</span></p>
+                        <input type="date" id="birthday" name="birthday" class="p-2" [(ngModel)]="startDate">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div>
+                        <p class="mb-2"><i style="margin-right: 5px;" class="fa-solid fa-circle-xmark"></i><span>Teslim
+                            Ediş</span></p>
+                        <input type="date" id="birthday" name="birthday" class="p-2" [(ngModel)]="endDate">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="form-group col-sm-7">
+                  <button *ngIf="car" style="margin-left: 4rem;" (click)="rentCar(currentRental)"
+                    class="btn btn-danger text-center p-3 pay"><i class="fa-solid fa-arrow-right"></i>
+                    {{car.dailyPrice}} TL
+                    Ödemeye Geç</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="all">
+      <div class="title">
+        <h6>Araç Ve Teslim Bilgileri</h6>
+      </div>
+      <div class="main" *ngIf="car && carImages">
+        <br>
+        <p style="color:rgb(48, 48, 179);margin-bottom: .3rem;">{{car.carName}}</p>
+        <p style="color:rgb(206, 221, 36);margin-bottom: .3rem;font-size: 1.4rem;">{{car.dailyPrice}} TL</p>
+        <img *ngIf="carImages.length > 0 && carImages" [src]="url" width="150px" height="150px" alt=""
+          style="border-radius: 5px;">
+        <br>
+        <img *ngIf="carImages.length == 0" width="150px" height="150px" style="border-radius: 5px;"
+          src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" alt="">
+        <br>
+        <div class="properties">
+          <br>
+          <br>
+          <div class="d-flex" style="justify-content: space-evenly;">
+            <span style="margin-right: 10px;"><i class="fa-solid fa-circle-user"></i> {{car.seatNumber}}
+              Koltuklu</span>
+            <span style="margin-right: 10px;"><i class="fa-solid fa-calendar-days"></i> {{car.modelYear}}</span>
+            <span style="margin-right: 10px;"><i class="fa-solid fa-copyright"></i> {{car.brandName}}</span>
+          </div>
+          <br>
+
+          <div class="d-flex" style="justify-content: space-evenly;">
+            <span><i class="fa-solid fa-location-dot"></i> {{car.location}}</span>
+            <span style="margin-right: 10px;"><i class="fa-solid fa-droplet"></i> {{car.colorName}}</span>
+          </div>
+
+          <br>
+          <div class="privacy">
+            <span>*Gizlilik sözleşmemizi <u>okumak</u> için tıklayın.</span>
+            <br>
+            <span>*Kiralama sözleşmemizi <u>okumak</u> için tıklayın.</span>
+            <br>
+            <span>*Bizden son haberleri <u>almak</u> için tıklayın.</span>
+          </div>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

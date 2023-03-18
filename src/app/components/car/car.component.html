@@ -1,0 +1,87 @@
+
+ <br>
+<div>
+  <h5 style="font-family: 'Pacifico', cursive;">Araba İsmine Göre Filtrele</h5>
+  <div class="mb-3">
+    <input type="text" [(ngModel)]="filteredText" class="form-control" id="filterText" placeholder="Ara...">
+  </div>
+</div>
+<div *ngIf="filteredText.length > 2" class="alert alert-primary" role="alert">
+  {{filteredText}} aradınız.
+</div>
+
+
+<div *ngIf="dataLoaded==false" class="d-flex flex-column" style="justify-content: center;align-items:center;">
+  <div class="spinner-border text-danger" role="status">
+  </div>
+  <div>
+    <span>Veriler yükleniyor...</span>
+  </div>
+</div>
+<br>
+<br>
+
+
+
+<div *ngIf="cars.length === 0  && dataLoaded!=false" class="alert alert-danger" role="alert">
+  İlgili markaya ait araba bulunamadı.
+</div>
+<div class="row" *ngIf="cars">
+  <div class="col-lg-4 col-md-6 col-xl-3 mb-3" *ngFor="let car of cars |filterPipe:filteredText">
+    <div class="d-flex y">
+      <div class="card_main">
+        <div class="car_image_div">
+          <a routerLink="car/{{car.carId}}">
+            <img class="car_image"
+              src="https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200"
+              alt="">
+          </a>
+        </div>
+        <div class="information d-flex">
+          <a href="#" class="featured">
+            <h6>FEATURED</h6>
+          </a>
+          <a class="featured_number" href=""><i class="fa-solid fa-image" style="margin-right: 5px;"></i>25</a>
+          <button (click)="addToCart(car)" class="basket" href="#"><i class="fa-solid fa-basket-shopping"></i></button>
+          <a class="like_button" href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
+        <div>
+          <div class="card">
+            <div class="container">
+              <br>
+              <div class="d-flex justify-content-between">
+                <h6 class="blue"><i class="fa-solid fa-copyright"></i> {{car.brandName}}</h6>
+                <span><i class="fa-solid fa-location-dot"></i> {{car.location}}</span>
+              </div>
+              <h6 class="green">{{car.carName}}</h6>
+              <h6><i class="fa-solid fa-money-bill"></i> {{car.dailyPrice}} TL</h6>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-gas-pump iconsize"></i><span style="margin-left: 8px;">Benzin</span>
+                </div>
+                <div>
+                  <i class="fa fa-sitemap iconsize"></i>
+                  <span style="margin-left: 6px;">Otomatik</span>
+                </div>
+              </div>
+              <br>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <i class="fa-solid fa-dharmachakra iconsize"></i><span style="margin-left: 8px;">ABS Fren</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-gauge iconsize"></i>
+                  <span style="margin-left: 8px;">1000 CC</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center align-items-center">
+  <a routerLink="/cars" class="btn btn-danger">Tüm Markalara Geri Dön</a>
+</div>
+<br>

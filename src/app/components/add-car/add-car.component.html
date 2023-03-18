@@ -1,0 +1,81 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Hoşgeldiniz</h3>
+      <p>Yeni bir araba eklemek için formu doldurun</p>
+      <input routerLink="" type="submit" name="" value="Ana Sayfa" /><br />
+    </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Araba Ekle</h3>
+          <div class="row register-form">
+            <div class="col-md-12">
+              <form [formGroup]="addCarForm">
+                <div class="form-group">
+                  <input type="number" formControlName="modelYear" class="form-control"
+                    placeholder="Araba Çıkış Tarihi*" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="number" formControlName="dailyPrice" class="form-control" placeholder="Günlük Fiyat *"
+                    value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="description" class="form-control" placeholder="Açıklama *"
+                    value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="location" class="form-control" placeholder="Konum *" value="" />
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Marka Seçin *</label>
+                      <br>
+                      <mat-form-field appearance="fill">
+                        <select formControlName="brandId" matNativeControl required>
+                          <option value="{{brand.brandId}}" *ngFor="let brand of brands">{{brand.brandName}}</option>
+                        </select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Renk Seçin *</label>
+                      <br>
+                      <mat-form-field appearance="fill">
+                        <select formControlName="colorId" matNativeControl required>
+                          <option value="{{color.id}}" *ngFor="let color of colors">{{color.name}}</option>
+                        </select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <h4>Resim Ekleyin</h4>
+                <form>
+                  <div class="form-group">
+                    <input type="file"(change)="onChange($event)" class="form-control" placeholder="Konum *" />
+                  </div>
+                  <div class="form-group">
+                    <input hidden   type="number" class="form-control" placeholder="Konum *" />
+                  </div>
+                </form>
+                <span style="color: red;margin-bottom: 1rem;display: inline-block;">* ile işaretlenen alanların
+                  doldurulması zorunludur</span>
+                <button  type="button"(click)="addCar()" class="btn btn-primary" style="margin-left:5rem">Araba
+                  Ekle</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

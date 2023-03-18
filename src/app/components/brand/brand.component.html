@@ -1,0 +1,12 @@
+<div  *ngIf="dataLoaded==false"  class="d-flex flex-column" style="justify-content: center;align-items:center;">
+  <div class="spinner-border text-danger" role="status">
+  </div>
+  <div>
+    <span>Veriler yükleniyor...</span>
+  </div>
+  </div>
+    <ul *ngIf="dataLoaded!=false" class="list-group" style="width:300px;">
+      <li class="list-group-item"><h6 class="text-center">Markaya Göre Sırala</h6></li>
+      <li class="list-group-item" style="font-weight:bold;background-color: aquamarine;" routerLink="/cars">Tüm Markalar</li>
+      <li (click)="getCurrentBrand(c)" [class]="getBrandClassName(c)" routerLink="brands/{{c.brandId}}" *ngFor="let c of brands">{{c.brandName}}</li>
+    </ul>

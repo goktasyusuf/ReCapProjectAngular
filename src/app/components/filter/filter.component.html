@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center main" style="background-image: url(https://themewagon.github.io/carrentals/images/hero_1_a.jpg);object-fit: cover;height: 15rem;background-size:cover;border-radius: 5px; width:100%;">
+<div class="d-flex justify-content-center select p-5" style="border-radius: 5px;width: 100%;">
+  <div>
+    <label>Marka Seç
+      <select [(ngModel)]="selectedOptionBrand" style="width:15rem;margin-right: 2rem;" class="form-select"
+        aria-label="Default select example">
+        <option *ngFor="let brand of brands" value="{{brand.brandId}}">{{brand.brandName}}</option>
+      </select>
+    </label>
+  </div>
+  <div style="margin-right: 2rem;">
+    <label>Renk Seç
+      <select style="width:15rem" [(ngModel)]="selectedOptionColor" class="form-select"
+        aria-label="Default select example">
+        <option *ngFor="let color of colors" value="{{color.id}}">{{color.name}}</option>
+      </select>
+    </label>
+    <button routerLink="{{selectedOptionBrand}}/{{selectedOptionColor}}" style="margin-left: 1rem;margin-bottom: .3rem;"
+    class="btn btn-xs btn-dark filter">Filtrele</button>
+  </div>
+</div>
+</div>

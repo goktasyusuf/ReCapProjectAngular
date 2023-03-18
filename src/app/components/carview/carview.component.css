@@ -1,0 +1,172 @@
+.featured {
+    background-color: #fdc500;
+    padding: 0px 5px;
+    border-radius: 10%;
+    text-decoration: none;
+    color: #123652;
+    position: absolute;
+    top: -190px;
+    right: 35px;
+  }
+  .featured h6 {
+      font-size: 10px;
+      margin-top: 5px;
+  }
+  
+  .featured_number {
+    background-color: #123652;
+    color: white;
+    padding: 0px 10px;
+    border-radius: 10%;
+    text-decoration: none;
+    position: absolute;
+    top: -190px;
+    left: 5px;
+  }
+  
+  .card_main {
+    position: relative;
+    width: 300px;
+  }
+  
+  .car_image {
+    width: 280px;
+    height: 200px;
+    border-radius: 2%;
+  
+  }
+  .card {
+    width: 280px;
+    padding: 15px;
+  }
+  
+  .information {
+    position: relative;
+    top: 0px;
+  }
+  
+  .like_button{
+    background-color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    border-radius: 20%;
+  }
+  .like_button i {
+      color: black;
+      font-size: 15px;
+  }
+  .like_button:hover {
+      background-color: #e74c3c;
+      transition: 0.5s;
+  }
+  
+  
+  .like_button:hover i  {
+      color: white;
+  }
+  
+  .blue {
+    color: #55acee;
+  }
+  
+  .green {
+    color: #3cd594;
+  }
+  
+  .iconsize {
+    font-size: 18px;
+  }
+
+  .all_cars{
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+  }
+  .all_cars:hover {
+    background-color: rgb(191, 61, 61);
+    color: black;
+    transition: 0.5s;
+  }
+  
+  @media (max-width: 1200px) {
+    .car_image {
+      width: 300px;
+    }
+    .card {
+      width: 300px;
+    }
+    .featured {
+      right: 8px;
+    }
+    .like_button{
+      top: -40px;
+      right: 8px;
+  
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .car_image {
+      width: 230px;
+    }
+    .card {
+      width: 230px;
+    }
+    .featured {
+      right: 5px;
+    }
+    .like_button {
+      right: 5px;
+    }
+    .iconsize {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card_main {
+      margin-top: 15px;
+    }
+    .y {
+      justify-content: center;
+      align-items: center;
+    }
+    .like_button {
+      right: 5px;
+    }
+    .featured {
+      right: 5px;
+    }
+    .car_image {
+        width: 260px;
+      }
+      .card {
+        width: 260px;
+      }
+  }
+
+  @media (max-width: 576px) {
+    .card_main {
+      margin-top: 15px;
+    }
+    .y {
+      justify-content: center;
+      align-items: center;
+    }
+    .like_button {
+      right: 45px;
+    }
+    .featured {
+      right: 45px;
+    }
+    .car_image {
+        width: 260px;
+      }
+      .card {
+        width: 260px;
+      }
+  }

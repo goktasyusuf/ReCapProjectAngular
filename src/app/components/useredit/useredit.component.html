@@ -1,0 +1,56 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Hoşgeldiniz</h3>
+      <p>Bilgilerinizi güncellemek için formu doldurun</p>
+      <input routerLink="" type="submit" name="" value="Ana Sayfa" /><br />
+    </div>
+    <div class="col-md-9 register-right" *ngIf="user">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Bilgilerimi Güncelle</h3>
+          <div class="row register-form">
+            <div class="col-md-12">
+              <form [formGroup]="editForm"  *ngIf="user">
+                <div class="form-group">
+                  <input type="text"  readonly value="{{setData()}}" formControlName="eMail" class="form-control" placeholder="E-Mailiniz *" />
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="firstName" class="form-control" placeholder="İsminiz*"/>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="lastName" class="form-control" placeholder="Soyisminiz *"
+                     />
+                </div>
+
+
+                <div class="form-group">
+                  <input type="text" formControlName="userName" class="form-control" 
+                    placeholder="Kullanıcı Adı *"/>
+                </div>
+
+                <div class="form-group">
+                  <input type="number" formControlName="age" class="form-control"  placeholder="Yaş *"
+                     />
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="about" class="form-control" placeholder="Hakkımda *" />
+                </div>
+                <span style="color: red;margin-bottom: 1rem;display: inline-block;">* ile işaretlenen alanların
+                  doldurulması zorunludur.</span>
+                <button type="button" (click)="updateUser()" class="btn btn-primary" style="margin-left:5rem">Bilgileri
+                  Güncelle</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

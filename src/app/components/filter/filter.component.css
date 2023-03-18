@@ -1,0 +1,12 @@
+@media (max-width: 992px) {
+    .filter{
+        margin-top: 10px;
+        margin-left: 0px !important;
+    }
+    
+  }
+  .filter:hover {
+    background: white;
+    color: black;
+  }
+

@@ -1,0 +1,23 @@
+<div  *ngIf="dataLoaded==false"  class="d-flex flex-column" style="justify-content: center;align-items:center;">
+    <div class="spinner-border text-danger" role="status">
+    </div>
+    <div>
+      <span>Veriler yükleniyor...</span>
+    </div>
+    </div>
+    
+      <table *ngIf="dataLoaded!=false" class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">renk İsim</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of colors">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    
