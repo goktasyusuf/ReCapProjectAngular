@@ -9,6 +9,7 @@ import { CarComponent } from './components/car/car.component';
 import { CarviewComponent } from './components/carview/carview.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { PaymentConfirmComponent } from './components/payment-confirm/payment-confirm.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"user",component:UserComponent ,canActivate:[LoginGuard]},
-  {path:"useredit",component:UsereditComponent ,canActivate:[LoginGuard]}
+  {path:"useredit",component:UsereditComponent ,canActivate:[LoginGuard]},
+  {path:"resetpassword",component:PasswordResetComponent,canActivate:[LoginGuard]}
 ];
 
 @NgModule({

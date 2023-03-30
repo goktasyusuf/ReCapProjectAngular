@@ -3,9 +3,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&display=swap" rel="stylesheet">
 
 
-<div class="container" *ngIf="user">
+<div class="container pt-5" *ngIf="user">
   <div class="main-body">
-
     <h2 style="font-family: 'Pacifico', cursive;">Kullanıcı Profili</h2>
     <hr>
     <div class="row gutters-sm">
@@ -21,7 +20,7 @@
                 <br>
                 <p *ngIf="roles">Rolleriniz : {{roles}}</p>
                 <p *ngIf="!roles">Herhangi bir role sahip değilsiniz.</p>
-                <button class="btn btn-outline-primary">Mesajlarım</button>
+                <button routerLink="/resetpassword" class="btn btn-outline-primary">Şifremi Sıfırla</button>
               </div>
             </div>
           </div>
@@ -104,43 +103,45 @@
                 <h6 class="mb-0">Hakkımda</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-               {{user.about}}
+                {{user.about}}
               </div>
             </div>
             <hr>
             <div class="row edit">
               <div class="col-sm-3">
-                <a class="btn btn-info"
-                  routerLink="/useredit">Profili Düzenle</a>
+                <a class="btn btn-info" routerLink="/useredit">Profili Düzenle</a>
               </div>
               <div class="col-sm-3">
-                <button class="btn btn-danger" style="margin-right: 1.4rem;" routerLink="/cars/addcar">Araba Ekle</button>
+                <button class="btn btn-danger" style="margin-right: 1.4rem;" routerLink="/cars/addcar">Araba
+                  Ekle</button>
               </div>
               <div class="col-sm-3">
-                <button class="btn btn-success" style="margin-right: 1.4rem;"  routerLink="/cars/addbrand">Marka Ekle</button>
+                <button class="btn btn-success" style="margin-right: 1.4rem;" routerLink="/cars/addbrand">Marka
+                  Ekle</button>
               </div>
               <div class="col-sm-3">
-                <button class="btn btn-warning color"  routerLink="/cars/addcolor">Renk Ekle</button>
+                <button class="btn btn-warning color" routerLink="/cars/addcolor">Renk Ekle</button>
               </div>
             </div>
           </div>
         </div>
-        <h5 class="text-center" style="font-family: 'Pacifico', cursive;text-transform: uppercase;">Kiraladığım Arabalar</h5>
+        <h5 class="text-center" style="font-family: 'Pacifico', cursive;text-transform: uppercase;">Kiraladığım Arabalar
+        </h5>
         <br>
         <div class="d-flex" style="justify-content: space-evenly;">
-            <div class="card" style="width: 18rem;" *ngFor="let c of cars">
-              <div class="card-body">
-                <h5 class="card-title">{{c.description}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{c.brandName}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted">{{c.modelYear}} Model</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Renk : {{c.colorName}} </h6>
-                <h6 class="card-subtitle mb-2 text-muted">Günlük Fiyat : {{c.dailyPrice}} TL</h6>
-                <h6 class="card-subtitle mb-2">Teslim Alış: {{c.rentDate}}</h6>
-                <h6 class="card-subtitle mb-2">Teslim Ediş : {{c.returnDate}}</h6>
-              </div>
+          <div class="card" style="width: 18rem;" *ngFor="let c of cars">
+            <div class="card-body">
+              <h5 class="card-title">{{c.description}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{c.brandName}}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{c.modelYear}} Model</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Renk : {{c.colorName}} </h6>
+              <h6 class="card-subtitle mb-2 text-muted">Günlük Fiyat : {{c.dailyPrice}} TL</h6>
+              <h6 class="card-subtitle mb-2">Teslim Alış: {{c.rentDate}}</h6>
+              <h6 class="card-subtitle mb-2">Teslim Ediş : {{c.returnDate}}</h6>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

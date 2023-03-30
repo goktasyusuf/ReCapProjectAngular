@@ -37,7 +37,9 @@ export class AddCarComponent implements OnInit {
       modelYear: ["", Validators.required],
       dailyPrice: ["", Validators.required],
       location: ["", Validators.required],
-      description: ["", Validators.required]
+      description: ["", Validators.required],
+      findexScore:["", Validators.required],
+      seatNumber:["", Validators.required]
     })
   }
 
@@ -52,16 +54,19 @@ export class AddCarComponent implements OnInit {
       this.carService.addCar(model).subscribe(response => {
         if (response.success) {
           this.carId = response.data;
-          setTimeout(() => {
-            let model2 = {
-              carId:this.carId,
-              image:this.file
-            }
-            this.imageService.addImage(model2).subscribe(response => {
-              if (response.success) {  
+          if(this.file != null) {
+            setTimeout(() => {
+              let model2 = {
+                carId:this.carId,
+                image:this.file
               }
-            })
-          }, 2000) 
+              this.imageService.addImage(model2).subscribe(response => {
+                if (response.success) {  
+                }
+              })
+            }, 2000) 
+          }
+          
           this.toastrService.success("Başarıyla Eklendi", "Başarılı")
         }
       }, responseError => {

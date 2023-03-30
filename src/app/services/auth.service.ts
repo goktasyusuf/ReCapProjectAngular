@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { ListResponseModel } from '../models/listResponseModel';
+import { PasswordReset } from '../models/passwordReset';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,6 @@ export class AuthService {
 
 
   constructor(private httpClient:HttpClient,private router:Router) {}
-
-
 
   login(loginModel:LoginModel):Observable<SingleResponseModel<Token>> {
     return this.httpClient.post<SingleResponseModel<Token>>(this.apiURL + "login",loginModel);
@@ -46,6 +45,10 @@ export class AuthService {
 
   getToken() {
     return  (localStorage.getItem("token") || "");
+  }
+
+  updatePassword(dto:PasswordReset):Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiURL + "resetpassword",dto);
   }
 
   decodeToken(token:string):string {

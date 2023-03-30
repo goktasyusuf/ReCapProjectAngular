@@ -36,8 +36,10 @@ export class RegisterComponent implements OnInit {
       this.authService.register(model).subscribe(response=>{
         if(response.success) {
           localStorage.setItem("registerToken",response.data.token);
-          this.toastrService.info("Kayıt Başarılı","Başarılı") 
-          this.router.navigate(["login"]);
+          this.toastrService.info("E-Mailinize doğrulama linki gönderilmiştir.","Kayıt Başarılı") 
+          setTimeout(()=>{
+            this.router.navigate(["login"]);
+          },2700)
         }
       },responseError=>{
         console.log(responseError)

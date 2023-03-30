@@ -9,6 +9,7 @@ export interface Car {
     brandId:number;
     seatNumber:number;
     description:string;
+    findexScore:number;
     rentDate:Date;
     returnDate:Date;
 }

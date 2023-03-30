@@ -33,6 +33,13 @@
                 <div class="form-group">
                   <input type="text" formControlName="location" class="form-control" placeholder="Konum *" value="" />
                 </div>
+                
+                <div class="form-group">
+                  <input type="number" formControlName="findexScore" class="form-control" placeholder="Findex Skoru *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="number" formControlName="seatNumber" class="form-control" placeholder="Koltuk Sayısı *" value="" />
+                </div>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
@@ -68,7 +75,7 @@
                 </form>
                 <span style="color: red;margin-bottom: 1rem;display: inline-block;">* ile işaretlenen alanların
                   doldurulması zorunludur</span>
-                <button  type="button"(click)="addCar()" class="btn btn-primary" style="margin-left:5rem">Araba
+                <button  type="button" (click)="addCar()" class="btn btn-primary" style="margin-left:5rem">Araba
                   Ekle</button>
               </form>
             </div>

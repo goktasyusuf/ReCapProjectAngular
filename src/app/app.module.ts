@@ -42,6 +42,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsereditComponent } from './components/useredit/useredit.component';
 import { PaymentConfirmComponent } from './components/payment-confirm/payment-confirm.component';
 import {FileUploadModule} from 'primeng/fileupload';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +75,8 @@ import {FileUploadModule} from 'primeng/fileupload';
     LoginComponent,
     RegisterComponent,
     UsereditComponent,
-    PaymentConfirmComponent
+    PaymentConfirmComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
